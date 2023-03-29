@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="mince.js" defer></script>
+</head>
+<body>
+    <main id="main">
+        <section id="all-inputs">
+            <div class="input">
+                <p>Částka</p>
+                <div>
+                    <input type="number" name="" min="0" value="0" id="deposit"> Kč
+                </div>
+            </div>
+            <div class="input">
+                <p>Počet 50kč</p>
+                <div>
+                    <input type="number" name="" min="0" value="0" id="amount-50kc"> Kč
+                </div>
+            </div>
+            <div class="input">
+                <p>Počet 20kč</p>
+                <div>
+                    <input type="number" name="" min="0" value="0" id="amount-20kc"> Kč
+                </div>
+            </div>
+            <div class="input">
+                <p>Počet 10kč</p>
+                <div>
+                    <input type="number" name="" min="0" value="0" id="amount-10kc"> Kč
+                </div>
+            </div>
+            <div class="input">
+                <p>Počet 5kč</p>
+                <div>
+                    <input type="number" name="" min="0" value="0" id="amount-5kc"> Kč
+                </div>
+            </div>
+            <div class="input">
+                <p>Počet 2kč</p>
+                <div>
+                    <input type="number" name="" min="0" value="0" id="amount-2kc"> Kč
+                </div>
+            </div>
+            <div class="input">
+                <p>Počet 1kč</p>
+                <div>
+                    <input type="number" name="" min="0" value="0" id="amount-1kc"> Kč
+                </div>
+            </div>
+            <div class="butdiv">
+                <button id="reset" onclick="reset()">Reset</button>
+            </div>
+            <div class="butdiv" >
+                <button id="submit" onclick="submit()">Submit</button>
+            </div>
+        </section>
+        <div id="results">
+            <p id="result"></p>
+            <p id="result_50kc"></p>
+            <p id="result_20kc"></p>
+            <p id="result_10kc"></p>
+            <p id="result_5kc"></p>
+            <p id="result_2kc"></p>
+            <p id="result_1kc"></p>
+        </div>
+    </main>
+</body>
+</html>
