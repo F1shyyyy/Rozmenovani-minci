@@ -4,7 +4,7 @@ let vydanominci = [0, 0, 0, 0, 0, 0];
 const mince = [50, 20, 10, 5, 2, 1];
 let pocetminci = [7, 8, 10, 20, 85, 120];
 let index = 0;
-
+let soucetminci = 1000;
 function submit(){
     deposit = parseInt(document.querySelector('#deposit').value);   
     pozadovanominci[0] = parseInt(document.querySelector('#amount-50kc').value);
@@ -15,7 +15,7 @@ function submit(){
     pozadovanominci[5] = parseInt(document.querySelector('#amount-1kc').value);
 
     console.log(deposit)
-    if(deposit == 0 || deposit > 1000){
+    if(deposit == 0 || deposit > soucetminci){
         alert("Omlouváme se, ale vložte částku od 0 po 1000 kč.");
         return;
     }
@@ -29,6 +29,8 @@ function submit(){
             return;
         }
     });
+    soucetminci -= deposit
+    console.log(soucetminci)
     vydanominci.forEach((vydano, index) => {
             while (vydano != pozadovanominci[index]) {
                 if (deposit >= mince[index] && pocetminci[index] > 0) {
