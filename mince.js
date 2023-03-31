@@ -15,13 +15,17 @@ function submit(){
     pozadovanominci[5] = parseInt(document.querySelector('#amount-1kc').value);
 
     console.log(deposit)
+    if(soucetminci == 0){
+        alert("Omlouváme se, ale automatu došly všechny mince.");
+        return
+    }
     if(deposit == 0 || deposit > soucetminci){
-        alert("Omlouváme se, ale vložte částku od 0 po " + soucetminci + " kč.");
+        alert(`Omlouváme se, ale vložte částku od 0 po ${soucetminci} kč.`);
         return;
     }
     pozadovanominci.forEach(function (cislo, index) {
         if(cislo > pocetminci[index]){
-            alert("Omlouváme se, ale automat nemá tolik " + mince[index] + " Kč mincí.");
+            alert(`Omlouváme se, ale automat nemá tolik ${mince[index]} Kč mincí.`);
             return;
         }
         if(deposit < (cislo * mince[index])){
@@ -66,12 +70,12 @@ function submit(){
     }
     let resultsDiv = document.getElementById("results");
     resultsDiv.style.display = "flex";
-    document.querySelector('#result_50kc').innerText = "Počet 50 Kč: " + vydanominci[0];
-    document.querySelector('#result_20kc').innerText = "Počet 20 Kč: " + vydanominci[1];
-    document.querySelector('#result_10kc').innerText = "Počet 10 Kč: " + vydanominci[2];
-    document.querySelector('#result_5kc').innerText = "Počet 5 Kč: " + vydanominci[3];
-    document.querySelector('#result_2kc').innerText = "Počet 2 Kč: " + vydanominci[4];
-    document.querySelector('#result_1kc').innerText = "Počet 1 Kč: " + vydanominci[5];
+    document.querySelector('#result_50kc').innerText = `Počet 50 Kč: ${vydanominci[0]}`;
+    document.querySelector('#result_20kc').innerText = `Počet 20 Kč: ${vydanominci[1]}`;
+    document.querySelector('#result_10kc').innerText = `Počet 10 Kč: ${vydanominci[2]}`;
+    document.querySelector('#result_5kc').innerText = `Počet 5 Kč: ${vydanominci[3]}`;
+    document.querySelector('#result_2kc').innerText = `Počet 2 Kč: ${vydanominci[4]}`;
+    document.querySelector('#result_1kc').innerText = `Počet 1 Kč: ${vydanominci[5]}`;
 }
 function reset(){
     document.querySelector('#deposit').value = "0";
