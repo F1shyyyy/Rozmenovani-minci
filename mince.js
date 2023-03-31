@@ -16,7 +16,7 @@ function submit(){
 
     console.log(deposit)
     if(deposit == 0 || deposit > soucetminci){
-        alert("Omlouváme se, ale vložte částku od 0 po 1000 kč.");
+        alert("Omlouváme se, ale vložte částku od 0 po " + soucetminci + " kč.");
         return;
     }
     pozadovanominci.forEach(function (cislo, index) {
